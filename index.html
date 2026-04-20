@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetDesk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- 一覧 -->
+  <div id="listView" class="view">
+    <div class="sidebar">
+      <h2>Tickets</h2>
+
+      <div class="ticket" onclick="openTicket(1)">
+        <p class="tag">LACP</p>
+        <p class="title">Aggregation issue</p>
+        <p class="meta">Created 2h ago · Due in 2 days</p>
+      </div>
+
+      <div class="ticket" onclick="openTicket(2)">
+        <p class="tag">NAT</p>
+        <p class="title">Session drops</p>
+        <p class="meta">Created 5h ago · Due in 1 day</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 詳細 -->
+  <div id="detailView" class="view hidden">
+
+    <div class="topbar">
+      <button onclick="goHome()">← Back</button>
+
+      <div class="lang">
+        <button onclick="setLang('jp')">JP</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+
+    <div class="detail">
+      <h1 id="d-title"></h1>
+      <p id="d-body"></p>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
