@@ -92,25 +92,12 @@ function decodeBase64Unicode(str) {
 
 /*Unlock*/
 async function unlockStory() {
-  const password = document.getElementById("passwordInput").value;
   const id = currentTicketId;
 
   if (!id || !storyMeta[id]) {
     alert("invalid state");
     return;
   }
-
-  const hashed = await hash(password);
-
-  if (hashed !== storyMeta[id].passwordHash) {
-    alert("wrong password");
-    return;
-  }
-
-  console.log("INPUT:", password);
-  console.log("HASHED:", hashed);
-  console.log("EXPECTED:", storyMeta[id].passwordHash);
-  console.log("ID:", id);
 
   // 正解 → ストーリー取得
   const res = await fetch(storyMeta[id].url);
