@@ -1,46 +1,18 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f5f7fb;
-}
-
-.app {
-  height: 100vh;
-}
-
-/* 共通 */
-.view {
-  height: 100%;
-}
-
-/* 一覧 */
-.sidebar {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
+.hidden { display: none; }
 
 .ticket {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
   cursor: pointer;
-  background: white;
 }
 
 .ticket:hover {
-  background: #eef3ff;
+  background: #f5f5f5;
 }
 
 .tag {
-  display: inline-block;
-  background: #1e3a8a;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
   font-size: 12px;
+  color: gray;
 }
 
 .title {
@@ -49,29 +21,5 @@ body {
 
 .meta {
   font-size: 12px;
-  color: gray;
-}
-
-/* 詳細 */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
-
-.detail {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
-  background: white;
-}
-
-.lang button {
-  margin-left: 5px;
-}
-
-.hidden {
-  display: none;
+  color: #777;
 }
