@@ -3,6 +3,7 @@ const basePath = "/netdesk";
 let currentTicketId = null;
 let tickets = {};
 let storyMeta = {};
+let unlocked = {};
 
 /* ===== 初期ロード ===== */
 
@@ -62,6 +63,9 @@ function showDetail(id) {
   document.getElementById("d-body").innerText = t.body.en;
 
   document.getElementById("question").innerText = storyMeta[id].question;
+
+  document.getElementById("passwordInput").value = "";
+  document.getElementById("storyContainer").classList.add("hidden");
 }
 
 function showList() {
@@ -86,18 +90,25 @@ function decodeBase64Unicode(str) {
   return new TextDecoder("utf-8").decode(bytes);
 }
 
+/*Unlock*/
 async function unlockStory() {
-  const input = document.getElementById("passwordInput").value;
-  const meta = storyMeta[currentTicketId];
+  const password = document.getElementById("passwordInput").value;
+  const id = currentTicketId;
 
-  const h = await hash(input);
-
-  if (h !== meta.passwordHash) {
-    alert("Incorrect password");
+  if (!id || !storyMeta[id]) {
+    alert("invalid state");
     return;
   }
 
-  const res = await fetch(meta.url);
+  const hashed = await hash(password);
+
+  if (hashed !== storyMeta[id].passwordHash) {
+    alert("wrong password");
+    return;
+  }
+
+  // 正解 → ストーリー取得
+  const res = await fetch(storyMeta[id].url);
   const encoded = await res.text();
 
   const decoded = decodeBase64Unicode(encoded);
@@ -107,11 +118,6 @@ async function unlockStory() {
 
 function displayStory(text) {
   const container = document.getElementById("storyContainer");
-
-  const html = text
-    .split("\n")
-    .map(line => `<p>${line}</p>`)
-    .join("");
 
   container.innerHTML = html;
   container.classList.remove("hidden");

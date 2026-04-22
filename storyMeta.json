@@ -2,11 +2,11 @@
   "1": {
     "question": "NAPT uses IP and what?",
     "passwordHash": "f8d397a33fcb9725db96501e653bf3cfa4455c5639482b9936c22b221634d659",
-    "url": "stories/1.txt"
+    "url": "stories/story1.html"
   },
   "2": {
     "question": "If two switches have a tie with the same priority value, the switch with what mac address becomes the Root Bridge?",
     "passwordHash": "e17f73ea15abb637e8f1ca3fc50ec269d1df3d909c2707b64531e455caa47acd",
-    "url": "stories/2.txt"
+    "url": "stories/story2.html"
   }
 }

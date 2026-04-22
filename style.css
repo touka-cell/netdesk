@@ -1,25 +1,72 @@
-.hidden { display: none; }
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: #0d1117;
+  color: #e6edf3;
+}
 
+/* layout */
+.view {
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  background: #161b22;
+  padding: 20px;
+  border-right: 1px solid #30363d;
+}
+
+/* ticket */
 .ticket {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #30363d;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .ticket:hover {
-  background: #f5f5f5;
+  background: #1f2933;
+  border-left: 3px solid #58a6ff;
 }
 
-.tag {
-  font-size: 12px;
-  color: gray;
+/* detail */
+#detailView {
+  flex: 1;
+  padding: 20px;
 }
 
-.title {
-  font-weight: bold;
+/* input */
+input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
 }
 
-.meta {
-  font-size: 12px;
-  color: #777;
+/* button */
+button {
+  background: #238636;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2ea043;
+}
+
+/* story */
+#storyContainer {
+  margin-top: 15px;
+  padding: 15px;
+  background: #161b22;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
 }
