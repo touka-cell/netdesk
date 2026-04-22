@@ -99,11 +99,11 @@ async function unlockStory() {
     return;
   }
 
-  // 正解 → ストーリー取得
-  const res = await fetch(storyMeta[id].url);
-  const encoded = await res.text();
+  // // 正解 → ストーリー取得
+  // const res = await fetch(storyMeta[id].url);
+  // const encoded = await res.text();
 
-  const decoded = decodeBase64Unicode(encoded);
+  // const decoded = decodeBase64Unicode(encoded);
 
   displayStory(decoded);
 }
