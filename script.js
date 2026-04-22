@@ -80,13 +80,13 @@ async function hash(text) {
   const enc = new TextEncoder().encode(text);
   const buf = await crypto.subtle.digest("SHA-256", enc);
   return Array.from(new Uint8Array(buf))
-    .map(b => b.toString(16).padStart(2, "0"))
+    .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 }
 
 function decodeBase64Unicode(str) {
   const binary = atob(str);
-  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
   return new TextDecoder("utf-8").decode(bytes);
 }
 
@@ -107,6 +107,11 @@ async function unlockStory() {
     return;
   }
 
+  console.log("INPUT:", password);
+  console.log("HASHED:", hashed);
+  console.log("EXPECTED:", storyMeta[id].passwordHash);
+  console.log("ID:", id);
+
   // 正解 → ストーリー取得
   const res = await fetch(storyMeta[id].url);
   const encoded = await res.text();
@@ -119,7 +124,14 @@ async function unlockStory() {
 function displayStory(text) {
   const container = document.getElementById("storyContainer");
 
-  container.innerHTML = html;
+  // 危険なstyleを抑制
+  const wrapper = document.createElement("div");
+  wrapper.className = "story-inner";
+  wrapper.innerHTML = text;
+
+  container.innerHTML = "";
+  container.appendChild(wrapper);
+
   container.classList.remove("hidden");
 }
 

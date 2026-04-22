@@ -1,3 +1,4 @@
+/* 共通 */
 body {
   margin: 0;
   font-family: system-ui;
@@ -5,19 +6,24 @@ body {
   color: #e6edf3;
 }
 
-/* layout */
-.view {
+.hidden {
+  display: none;
+}
+
+/* ===== 一覧（2カラム） ===== */
+#listView {
   display: flex;
+  min-height: 100vh;
 }
 
 .sidebar {
-  width: 300px;
+  width: 320px;
   background: #161b22;
   padding: 20px;
   border-right: 1px solid #30363d;
 }
 
-/* ticket */
+/* ===== チケット ===== */
 .ticket {
   padding: 12px;
   border-bottom: 1px solid #30363d;
@@ -30,13 +36,19 @@ body {
   border-left: 3px solid #58a6ff;
 }
 
-/* detail */
+/* ===== 詳細（1カラムに戻す） ===== */
 #detailView {
-  flex: 1;
-  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-/* input */
+/* Backボタン */
+#detailView button {
+  margin-bottom: 20px;
+}
+
+/* 入力 */
 input {
   background: #0d1117;
   border: 1px solid #30363d;
@@ -45,7 +57,7 @@ input {
   border-radius: 6px;
 }
 
-/* button */
+/* ボタン */
 button {
   background: #238636;
   border: none;
@@ -59,14 +71,17 @@ button:hover {
   background: #2ea043;
 }
 
-/* story */
+/* ===== ストーリー表示 ===== */
 #storyContainer {
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: 20px;
+  padding: 20px;
   background: #161b22;
   border-radius: 8px;
+
+  max-width: 100%;
+  overflow-x: auto;
 }
 
-.hidden {
-  display: none;
+#storyContainer * {
+  max-width: 100%;
 }
