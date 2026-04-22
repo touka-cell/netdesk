@@ -1,0 +1,25 @@
+.hidden { display: none; }
+
+.ticket {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.ticket:hover {
+  background: #f5f5f5;
+}
+
+.tag {
+  font-size: 12px;
+  color: gray;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.meta {
+  font-size: 12px;
+  color: #777;
+}

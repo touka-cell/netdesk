@@ -1,0 +1,32 @@
+{
+  "1": {
+    "title": {
+      "en": "PAT Translation Timeout",
+      "jp": "PAT セッションタイムアウト",
+      "fr": "Expiration PAT"
+    },
+    "body": {
+      "en": "Session disappears after idle time. NAT table entry removed.",
+      "jp": "通信が止まるとNATテーブルから削除されます。",
+      "fr": "La session disparaît après inactivité."
+    },
+    "tag": "NAT",
+    "summary": "Session drops",
+    "meta": "Created 2h ago · Due in 2 days"
+  },
+  "2": {
+    "title": {
+      "en": "STP Election",
+      "jp": "STP選出",
+      "fr": "Le Spanning-tree"
+    },
+    "body": {
+      "en": "Bridge Router is elected.",
+      "jp": "ブリッジルータが選出された。",
+      "fr": "Le routeur-pont est désigné."
+    },
+    "tag": "STP",
+    "summary": "Weird BPDUs are sent. Root Bridge is elected.",
+    "meta": "Created 5h ago · Due in 1 day"
+  }
+}

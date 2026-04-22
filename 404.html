@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetDesk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 一覧 -->
+<div id="listView" class="view">
+  <div class="sidebar">
+    <h2>Tickets</h2>
+    <div id="ticketList"></div>
+  </div>
+</div>
+
+<!-- 詳細 -->
+<div id="detailView" class="view hidden">
+  <button onclick="goHome()">← Back</button>
+
+  <h1 id="d-title"></h1>
+  <p id="d-body"></p>
+
+  <div>
+    <h3>Question</h3>
+    <p id="question"></p>
+
+    <input type="password" id="passwordInput">
+    <button onclick="unlockStory()">Unlock</button>
+
+    <div id="storyContainer" class="hidden"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
